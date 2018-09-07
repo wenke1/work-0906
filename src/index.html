@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="font/fonts/iconfont.css">
+    <link rel="stylesheet" href="css/libs/swiper-4.1.6.min.css">
+    <script src="js/libs/flexible.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div>
+                <span>北京</span>
+                <i class="icon iconfont icon-xiala"></i>
+            </div>
+            <form action="">
+                <i class="icon iconfont icon-fangdajing"></i>
+                <input type="text" placeholder="输入商家/类品/商圈">
+            </form>
+            <div>
+                <i class="icon iconfont icon-wode"></i>
+                <span>我的</span>
+            </div>
+        </header>
+        <section>
+            <div class="wrap">
+                <div class="pull_down">下拉刷新</div>
+                <div class="eathe">
+                    <div class="top">
+                        <img src="img/logo.jpg" alt="">
+                        <span>吃喝玩乐全都有</span>
+                    </div>
+                    <div class="bottom">
+                        <button>打开美团APP</button>
+                        <button class="active">下载APP优惠大</button>
+                    </div>
+                </div>
+                <div class="navlist swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <ul>
+
+                            </ul>
+                        </div>
+                        <div class="swiper-slide">
+                            <ul></ul>
+                        </div>
+                    </div>
+                    <script id="navList" type="text/x-Handlebars-template">
+                        {{#each this}}
+                        <li>
+                            <em>
+                                <i class="icon iconfont {{url}}"></i>
+                            </em>
+                            <span>{{type}}</span>
+                        </li>
+                        {{/each}}
+                    </script>
+                </div>
+                <div class="empty"></div>
+                <div class="guess">
+                    <h2>猜你喜欢</h2>
+                    <div class="cate">
+                    </div>
+                    <script id="cateList" type="text/x-Handlebars-template">
+                        {{#each this}}
+                        <dl>
+                            <dt>
+                                <img src="{{url}}" alt="">
+                            </dt>
+                            <dd>
+                                <h3>{{name}}</h3>
+                                <p>{{address}}</p>
+                                <p><span><em>{{newprice}}元</em> 门市价：{{lodprice}}</span><b>已售{{shop}}</b></p>
+                            </dd>
+                        </dl>
+                        {{/each}}
+                    </script>
+                </div>
+                <div class="pull_up">上拉加载</div>
+            </div>
+        </section>
+        <footer></footer>
+    </div>
+    <script src="./js/libs/require.js" data-main="./js/main"></script>
+</body>
+
+</html>
